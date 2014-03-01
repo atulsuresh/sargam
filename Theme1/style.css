@@ -1,0 +1,149 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+
+
+	
+/* normalize */
+html, body {padding: 0px;margin: 0px;height:100%;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,figure {margin:0; padding:0;}
+img {border:none;}
+ul, li{text-decoration:none; list-style:none; margin:0; padding:0;}
+
+/* ################### COMMON ################## */
+body {background:url("images/main_bg.jpg") repeat;background-color:#FFFFFF;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#757c91}
+.limited-width {width:940px;}
+section {}
+
+.block-content {margin-bottom:80px;margin-top:80px;transition: all 0.3s ease 0s;}
+H1 {text-align: center;font-weight: normal;}
+H1.main {color:#7f2b5f;text-transform: uppercase;font-family: 'zag_regularregular';font-size: 55px;margin-bottom:-10px;}
+H1.header {color:#FFF;text-transform: uppercase;font-family: 'zag_regularregular';font-size: 30px;}
+H1.discret1 {font-family:zag_boldregular;font-size:15px;font-weight: normal;color:#adadad;text-transform: uppercase;border-bottom: 1px solid #adadad;padding:10px 0px 5px 10px;margin-bottom:27px;}
+H2.type1 {color:#27b0b1;font-size:29px;font-weight: normal;}
+H2 {color:#27b0b1; font-size:29px;font-weight:normal; display:block; margin-bottom:20px; font-family:zag_boldregular;text-transform: uppercase;}
+H3.article {height:auto;font-size:16px;font-family:ProximaNova-Extrabld;color:#000;font-weight: normal;margin-bottom:12px;}
+*::selection {background:#5eb5b5;color:#FFFFFF;}
+*::-moz-selection {background:#5eb5b5;color:#FFFFFF;}
+img.right-float {float:right;vertical-align: middle;margin-left:39px;}
+.margin-bottom1 {margin-bottom:50px;}
+.ss-title2, p.ss-title2{margin-bottom:35px;color:#414450;font-size:16px;text-transform:none;font-weight:bold;}
+.bouton-rounded {font-family:ProximaNova-Semibold;font-size:14px;letter-spacing:1px; white-space:nowrap; text-transform:uppercase; text-decoration:none; border-radius:5px; background-color:#25b0b0;padding:5px 15px 5px 15px;display:inline-block;color:#FFF;}
+.bouton-bleu2 {background-color:#25b0b0;}
+.bouton-rose2 {background-color:#da0057;}
+strong {font-family:ProximaNova-Bold;font-weight:normal;}
+strong.medium {font-family:ProximaNova-Semibold;}
+ a { transition: all 0.1s ease 0s;cursor:pointer;}
+ 
+ 
+ #main-content {
+	background-image: url("images/part-bg.png");
+	background-repeat: repeat-y;
+	background-attachment:fixed;
+	background-position: top;
+	padding-top:150px;
+}
+ 
+ 
+ 
+ /* navigation content */
+#master-menu a {text-decoration:none;}
+#master-menu {position:absolute;z-index:3;width:100%; top:95%;}
+#master-menu #menu-nav {height:60px;background-color:#6ec1c2;position:relative;white-space:nowrap;}
+#master-menu #menu-nav #content-nav-left {position:absolute;right:50%;top:0px;transition: all 0.4s ease 0s;}
+#master-menu #menu-nav #content-nav-left li:LAST-CHILD {margin-right:9px;}
+#master-menu #menu-nav #content-nav-right li:FIRST-CHILD {margin-left:9px;}
+#master-menu #menu-nav #content-nav-right {position:absolute;left:50%;bottom:0px;transition: all 0.4s ease 0s;}
+#master-menu #menu-nav nav li  {background:url("../images/common/menu_bg_selected.gif") repeat-x; background-position:0 -6px; display:inline-block;text-decoration:none;line-height:60px;height:60px;margin-right:15px;transition: all 0.2s ease 0s;}
+#master-menu #menu-nav nav li a { font-family: 'ProximaNova-Bold';color:#FFFFFF;font-size:13px;letter-spacing:0.5px; text-transform: uppercase;}
+#master-menu #menu-nav nav li:LAST-CHILD {margin-right:0px;}
+#master-menu #menu-nav nav li:hover,#master-menu #menu-nav  li.current-menu-item {background-position:0px 0px;}
+#master-menu #menu-nav #logo-img {display:block;position:absolute;left:50%;margin-left:-50px;block;margin-top:5px;transition: all 0.4s ease 0s;z-index:20}
+
+
+/* nav  utilisateur */
+#master-menu #user-nav {overflow:hidden; height:97px;padding-left:50%;background:url("../images/common/central_cercle.png") no-repeat top center;transition: all 0.4s ease 0.1s;}
+#master-menu #user-nav nav {height:39px;width:381px;padding-right:10px; left:50%;margin-left:78px;background-color:#FFF;text-align: right; padding-top:5px;}
+#master-menu #user-nav a {display:inline-block;font-size:13px;text-transform: uppercase;margin-top:8px;vertical-align:middle;}
+#master-menu #user-nav #espace-perso-link {color:#757c91;font-family: 'ProximaNova-Bold';}
+#master-menu #user-nav #espace-perso-inscription {color:#25b0b0;margin-left:17px;font-family:ProximaNova-Extrabld;}
+#master-menu #user-nav .langue-item {font-family:ProximaNova-Extrabld; }
+#master-menu #user-nav a.langue-item {font-family:ProximaNova-Extrabld; color:#757c91;}
+#master-menu #user-nav a.langue-item.selected {font-family:ProximaNova-Extrabld;color:#CCC; }
+
+
+#master-menu #user-nav #fr {margin-left:45px;margin-right:2px;}
+#master-menu #user-nav #search-link { width:20px;height:18px;margin-left:23px;background: url("../images/common/enveloppe.png") no-repeat;}
+ 
+ 
+ 
+ 
+ /* ################# LANDING PAGE ###################### */
+
+#landing-intro {position:fixed; left:0;top:0;right:0;bottom:0;z-index:1;margin-top:-60px;}
+#landing-intro-relative-content { position:relative;height:100%;}
+
+
+/*#landing-intro {height:100%;height:713px;position: static;}*/
+#l-left,#l-right {width:20%;display:inline-block;vertical-align: middle;width:50%;}
+#l-left {height:100%; background:url("../images/common/logo_accueil.png") no-repeat center right;}
+#l-left.fr {height:100%; background:url("images/Sargam_logo.png") no-repeat center right;}
+#l-left.en {height:100%; background:url("../images/common/logo_accueil_en.png") no-repeat center right;} 
+#l-right {text-align: left;}
+#l-right #l-right-content {display:inline-block; width:450px;padding-left:25px; padding-right:28px;}
+#l-right-content H1 {text-align: right;padding:100px 0 10px 0;font-family:zag_regularregular;font-weight:normal;color:#f69524;font-size:75px;text-transform: uppercase;line-height:0.95;border-bottom: 1px solid #757c91;}
+#l-right-content H1 .edition {color:#7f2b5f;font-size:33px;font-family:zag_boldregular;padding-right:10px;}
+#l-right-content H1 .edition  sup {padding:0px;margin:0px;text-transform:none;font-size:18px;}
+#l-right-content #infos {text-transform:uppercase;width:100%;text-align: center;padding:15px 0 0 0}
+#l-right-content #infos  #infos-texte {letter-spacing: 0px; font-size:13px;font-family:ProximaNova-Bold; }
+
+/* Boutons navigations */
+#landing-nav {padding-top:34px;}
+.bouton-bleu,.bouton-rose {border-radius:5px;font-family:zag_regularregular;width:204px;height:50px;display:inline-block;color:#FFFFFF;line-height:50px;text-align: center;text-transform: uppercase;font-size:28px;cursor:pointer;text-decoration: none;}
+.bouton-bleu {background-color:#25b0b0;}
+.bouton-rose {background-color:#e41a6a;float:right;}
+
+/* Soutient */
+#l-right-content H3{ font-weight:normal; padding:30px 0 15px;font-size:13px;font-family:ProximaNova-Bold;text-transform: uppercase;}
+#l-right-content #soutient-container {text-align: justify; padding-top:25px;}
+#l-right-content #soutient-container div{display:inline-block;}
+
+
+ 
+ 
+ 
+ /**BASICS**/
+ 
+ /* buillet multi colonne */
+.multi-col {display:inline-block;vertical-align:top;margin-right:20px;}
+.buillet-type1 lh {color:#27b0b1; font-size:29px;display:block; margin-bottom:17px; font-family:zag_regularregular;text-transform: uppercase;}
+.buillet-type1 lh.ss-title,.white-box1 p.ss-title,.ss-title{font-family:Arial, Helvetica, sans-serif; margin-bottom:0px;color:#414450;font-size:16px;text-transform:none;font-weight:bold;}
+.buillet-type1 li {color:#414450;margin-top:6px;margin-bottom:6px;padding-left:15px;font-size:14px;background:url("images/bullet1.png") no-repeat left 5px;}
+
+
+/* buillet type 2 */
+.buillet-type2 {display:inline-block;}
+.buillet-type2 li {margin-top:5px;margin-bottom:8px;font-size:14px;}
+.buillet-type2 li a {color:#25b0b0;text-decoration:underline;font-weight:bold;}
+.dual-col .buillet-type2 {display:inline-block;width:154px;padding-right:34px;vertical-align: top;}
+.dual-col .buillet-type2:LAST-CHILD {padding-right:0px;}
+ 
+/* Main Contents */
+#landing-convention {padding-top:50px;position:absolute;z-index:2;width:100%;top:100%;margin-top:-35px; /* 35px hauteur footer actu */
+	/*background:url("../images/common/particules2.png") no-repeat top fixed;*/
+	/*background:url("../images/common/main_bg.jpg") repeat;*/
+	background-image: url("images/partbg.png"),url("images/main_bg.jpg");
+	background-repeat: repeat-y,repeat;
+	background-attachment:fixed,fixed;
+	background-position: top center,top center;
+	/*transition: all 0.5s ease 0s;*/
+	/*background-repeat: no-repeat;*/
+}
+.white-box1 {width:876px;padding:32px;background-color:#FFFFFF;margin-left:auto;margin-right:auto;position:relative;}
+.white-box1 p.accueil {font-size:18px;color:#757c91;font-family:ProximaNova-Bold}
+.white-box1 p.P1 {margin-bottom:15px;}
+#intro-texte .first-part {height:240px;}
+#intro-texte .second-part .item1 {width:411px;margin-left:20px;margin-right:80px;border-right:1px solid #d2d2d2;}
+#intro-texte .third-part {position:absolute;bottom:-15px;width:100%;text-align:center;left:0px;}

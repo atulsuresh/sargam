@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<link rel="stylesheet" href="style.css" />
+<script src="jquery.js"></script>
+<script src="mainjs.js"></script>
+<script>
+
+//init_menu_posY = $(window).height() - total_offset;
+
+$(window).load(function() {
+	//$("#master-menu").css({'top':init_menu_posY+"px"});
+	
+	var hauteur_bandeau_actu = 35;
+	var hauteur_menu_visible = 55;
+	var total_offset = hauteur_bandeau_actu + hauteur_menu_visible;
+	var init_menu_posY = 0;
+	var scroll_menu_anim = false;
+	
+	
+	function jqUpdateSize(){
+    // Get the dimensions of the viewport
+    var width = $(window).width();
+    var height = $(window).height();
+	init_menu_posY = $(window).height() - total_offset;
+	$('#master-menu').css({'top':init_menu_posY+"px"});
+	
+
+
+};
+$(document).ready(jqUpdateSize);    // When the page first loads
+$(window).resize(jqUpdateSize);     // When the browser changes size
+
+
+/*
+
+	init_menu_posY = $(window).height() - total_offset;
+	
+	
+	var initMenu_new = function() {
+		$('#master-menu').css({'top':init_menu_posY+"px"});
+	}
+initMenu_new();
+
+	
+
+	
+	$(window).resize(function(){
+		initMenu_new(true);
+		//gestionMenu();
+	});
+	
+	*/
+	});
+	
+	var cur_menu_pos = $("master-menu").position();
+	if(cur_menu_pos != 0)
+		{
+			$(document).ready(jqUpdateSize);    // When the page first loads
+$(window).resize(jqUpdateSize);     // When the browser changes size
+		}
+		
+	else
+		$('#master-menu').css({top:"0px"});
+	
+	
+</script>
+<script>
+
+function calcParallax(tileheight, speedratio, scrollposition) {
+return ((tileheight) - (Math.floor(scrollposition / speedratio) % (tileheight+1)));
+}
+
+window.onload = function() {
+
+window.onscroll = function() {
+var posY = (document.documentElement.scrollTop) ? document.documentElement.scrollTop : window.pageYOffset;
+
+var ground = document.getElementById('landing-convention');
+var groundparallax = calcParallax(53, 8, posY);
+ground.style.backgroundPosition = "0 " + groundparallax + "px"; 
+
+}
+}
+
+</script>
+</head>
+
+<body>
+
+
+<div id="bg" class="movable">
+
+
+	<!--- Menu Tag---->
+    <header id="master-menu">
+
+	<div id="menu-nav">
+
+	<nav id="content-nav-left" class="menu-left-menu-container"><ul id="menu-left-menu" class="item"><li id="menu-item-54" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-54"><a title="home" href="#landing-intro" >Home</a></li>
+<li id="menu-item-53" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53"><a title="Program" href="#S14about" >About</a></li>
+<li id="menu-item-52" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52"><a title="Conferences" href="#Results-Live" >Results</a></li>
+<li id="menu-item-51" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51"><a title="Events" href="#events" >Events</a></li>
+</ul></nav>		
+
+	    <a href="http:/sargamcusat.in"><img id="logo-img" src="http://www.meetinnov.com/en/wp-content/themes/meetinov/images/common/menu_logo_meetinov.png" ></a>
+
+		<nav id="content-nav-right" class="menu-right-menu-container"><ul id="menu-right-menu" class="item"><li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="#Grules" >General Rules</a></li>
+<li id="menu-item-58" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58"><a title="Event Rules" href="http://www.meetinnov.com/en/exhibitors" >Erules</a></li>
+<li id="menu-item-55" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55"><a title="Downloads" href="#Downloads" >Downloads</a></li>
+<li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a title="Photo Gallery" href="#Gallery" >Gallery</a></li>
+</ul></nav>	</div><!-- fin menu-nav  -->
+<!--
+    <div id="user-nav">
+
+    	<nav>
+
+			<a href="http://www.meetinnov.com/" id="fr" class="langue-item">FR</a>
+
+			<a href="http://www.meetinnov.com/en/" id="en" class="selected langue-item">EN</a>
+
+			<a href="mailto:contact@meetinnov.com" id = "search-link"></a>
+
+		</nav>
+
+    </div>
+-->
+</header>
+
+	<!-- Enf Menu Tag----> 
+    
+    
+    
+    <!--- Landing Intro Page -->
+    
+    
+    <section id="landing-intro">
+
+	
+	<div id="l-left" class="fr">
+    	
+    
+    </div><!-- no space pour inline-block
+
+	--><div id="l-right">
+
+ 		<div id="l-right-content">
+
+ 			<H1>Sargam 2014<br>
+	</H1>
+
+			<p id="infos">
+
+				<span id="infos-texte">Cochin University Youth Festival</span>
+
+			</p>
+
+			<nav id="landing-nav">
+
+				<a class="bouton-bleu convention-link scale-effect" href="#landing-convention">March 11 - 16</a>
+
+			</nav>
+
+
+
+						<div id="soutient-container">
+
+				
+
+				<div style="display:none"><img src="http://www.meetinnov.com/wp-content/themes/meetinov/images/common/img_soutient.png"></div>
+
+				<div style="display:none"><img src="http://www.meetinnov.com/wp-content/themes/meetinov/images/common/img_soutient.png"></div>
+
+			</div><!-- fin soutient container -->
+
+ 		</div><!-- fin l-right-content -->
+
+ 	</div><!-- fin l-right -->
+
+</section>
+
+
+
+
+<!-- Sargam Details Contents -->
+
+
+<div id="landing-convention">
+
+	<div id="intro-about" class="block-content">
+    <h1 class="main">Sargam 2014</h1>
+    	<div class="white-box1">
+        
+        <H2>About</H2>
+        	<p class="accueil P1">
+            Cochin University of Science and Technology, the arena of talented youth, is about to witness the cultural extravaganza, Sargam'13 .
+
+The CUSAT Youth Festival stands unique, converging artistic talents from Kasargod in the Northmost to Trivandrum in the South.These talented youth, setting aside their scholastic activities and academic pursuits, come to celebrate this annual cultural fiesta.
+
+Version new of Cochin University Union Arts Festival is to be unveiled 12th of March at the Thrikkakara Campus of CUSAT.
+            </p>
+        </div>
+    </div>
+    
+    
+    <div id="events-listing" class="block-content">
+    <h1 class="main">Rules</h1>
+    	<div class="white-box1">
+        
+    	
+        
+        	<ul class="buillet-type1 multi-col item1">
+            	<lh>General Rules</lh>
+                <li>The right to participate in the competitions of University Science and Technology youth festival is restricted to the fulltime and part-time students of constituent departments / Colleges of Cochin University.</li>
+                <li>The office bearers of the Cochin University Union are not eligible to participate in the youth festival competitions.</li>
+                
+            </ul>
+        
+        </div>
+        
+    </div>
+
+
+</div>
+
+	
+
+
+
+
+
+</div>
+
+
+
+
+
+</body>
+</html>
