@@ -36,7 +36,7 @@ $(window).load(function() {
 		
 	if(scroll_from_top+total_offset >= base_height)
 		{
-			$('#master-menu').css({top:"0px"});
+			$('#master-menu').css({'top':"0px"});
 			$('#infos').text( scroll_from_top + base_height);
 		}
 		
@@ -109,7 +109,7 @@ $('#infos').text( scroll_from_top + base_height);
 	
 </script>
 <script>
-
+/*
 function calcParallax(tileheight, speedratio, scrollposition) {
 return ((tileheight) - (Math.floor(scrollposition / speedratio) % (tileheight+1)));
 }
@@ -125,14 +125,19 @@ ground.style.backgroundPosition = "0 " + groundparallax + "px";
 
 }
 }
+*/
 
+
+
+$(window).scroll(function () {
+    $("#landing-convention").css("background-position","50% " + (-($(this).scrollTop() / 4)) + "px" );
+});
 </script>
 </head>
 
 <body>
 
 
-<div id="bg" class="movable">
 
 
 	<!--- Menu Tag---->
@@ -262,17 +267,48 @@ Version new of Cochin University Union Arts Festival is to be unveiled 12th of M
         </div>
         
     </div>
+    
+    
+    
+    
+    
+    
+    
+     <div id="EventRules" class="block-content">
+    <h1 class="main">Event Rules</h1>
+    	<div class="white-box1">
+        
+    	 <ul id="EventRlists" class="hoz-listing">'
+         	<li><a href="#">Literary</a></li>
+            <li><a href="#">Music</a></li>
+            <li><a href="#">Dance</a></li>
+                </ul>
+        
+        	<ul class="buillet-type1 multi-col item1">
+            	<lh>General Rules</lh>
+                
+               
+                <li>The right to participate in the competitions of University Science and Technology youth festival is restricted to the fulltime and part-time students of constituent departments / Colleges of Cochin University.</li>
+                <li>The office bearers of the Cochin University Union are not eligible to participate in the youth festival competitions.</li>
+                
+            </ul>
+        
+        </div>
+        
+    </div>
+    
+    
 
 
-</div>
+</div><!-- Landing Conventung END----->
+
+
 
 	
 
 
 
 
-
-</div>
 
 
 

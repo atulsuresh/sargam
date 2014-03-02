@@ -78,6 +78,14 @@ strong.medium {font-family:ProximaNova-Semibold;}
 #master-menu #user-nav #search-link { width:20px;height:18px;margin-left:23px;background: url("../images/common/enveloppe.png") no-repeat;}
  
  
+ .hoz-listing {text-decoration:none; height:5px; margin:0 auto 20px auto; width:100%; text-align:center   }
+.hoz-listing ul {height: auto;  padding: 1px 0px; margin: 0px; }
+	
+.hoz-listing a{text-decoration:none; color:#F90;}
+.hoz-listing li { display: inline-block; margin-right:20px; padding-right:20px; border-right:thin #333 solid; }
+.hoz-listing li:LAST-CHILD { display: inline; padding: 2px; border-right:thin #DDDADA;; }
+
+ 
  
  
  /* ################# LANDING PAGE ###################### */
@@ -141,7 +149,7 @@ strong.medium {font-family:ProximaNova-Semibold;}
 	/*transition: all 0.5s ease 0s;*/
 	/*background-repeat: no-repeat;*/
 }
-.white-box1 {width:876px;padding:32px;background-color:#FFFFFF;margin-left:auto;margin-right:auto;position:relative;}
+.white-box1 {width:876px;padding:32px; background:rgba(255,255,255,0.9); margin-left:auto; margin-right:auto;position:relative;}
 .white-box1 p.accueil {font-size:18px;color:#757c91;font-family:ProximaNova-Bold}
 .white-box1 p.P1 {margin-bottom:15px;}
 #intro-texte .first-part {height:240px;}
