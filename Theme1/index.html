@@ -152,6 +152,18 @@ $(window).scroll(function () {
     $("#landing-convention").css("background-position","50% " + (-($(this).scrollTop() / 4)) + "px" );
 });
 </script>
+
+
+<script>
+
+
+//Toggling Rules thing
+$('#EventRlists li').click(function() {
+    $('#SelectEventRules').css("display :block");
+});
+
+//END Togle Rules
+</script>
 </head>
 
 <body>
@@ -196,13 +208,14 @@ $(window).scroll(function () {
 
 	<!-- Enf Menu Tag----> 
     
-    
+    <div id="CusatLogo"><img src="images/CUSAT.png" /></div>
+    <div id="CusatUni">Cochin University Union 2012-13</div>
     
     <!--- Landing Intro Page -->
     
     
     <section id="landing-intro">
-
+	
 	
 	<div id="l-left" class="fr">
     	
@@ -294,15 +307,17 @@ Version new of Cochin University Union Arts Festival is to be unveiled 12th of M
     
     
      <div id="EventRules" class="block-content">
-    <h1 class="main">Event Rules</h1>
+    <h1 class="main">Events</h1>
     	<div class="white-box1">
         
     	 <ul id="EventRlists" class="hoz-listing">'
          	<li><a href="#">Literary</a></li>
             <li><a href="#">Music</a></li>
             <li><a href="#">Dance</a></li>
+            <li><a href="#">Fine arts</a></li>
+            <li><a href="#">Theatre</a></li>
                 </ul>
-        
+        <div id="SelectEventRules" style="display : none;">
         	<ul class="buillet-type1 multi-col item1">
             	<lh>General Rules</lh>
                 
@@ -313,6 +328,8 @@ Version new of Cochin University Union Arts Festival is to be unveiled 12th of M
             </ul>
         
         </div>
+        
+        </div><!-- END SelectEventRules -->
         
     </div>
     

@@ -1,6 +1,28 @@
 @charset "UTF-8";
 /* CSS Document */
 
+/* fonts */
+@font-face {
+  font-family: 'zag_boldregular';
+  src: url("fonts/zag_bold-webfont.eot");
+  src: url("fonts/zag_bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/zag_bold-webfont.woff") format("woff"), url("fonts/zag_bold-webfont.ttf") format("truetype"), url("fonts/zag_bold-webfont.svg#zag_boldregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+ }
+
+@font-face {
+  font-family: 'zag_regularregular';
+  src: url("fonts/zag_regular-webfont.eot");
+  src: url("fonts/zag_regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/zag_regular-webfont.woff") format("woff"), url("fonts/zag_regular-webfont.ttf") format("truetype"), url("fonts/zag_regular-webfont.svg#zag_regularregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {font-family: 'ProximaNova-Bold';src: url('fonts/274C59_23_0.eot');src: url('fonts/274C59_23_0.eot?#iefix') format('embedded-opentype'),url('fonts/274C59_23_0.woff') format('woff'),url('fonts/274C59_23_0.ttf') format('truetype');}
+@font-face {font-family: 'ProximaNova-Semibold';src: url('fonts/274C59_1F_0.eot');src: url('fonts/274C59_1F_0.eot?#iefix') format('embedded-opentype'),url('fonts/274C59_1F_0.woff') format('woff'),url('fonts/274C59_1F_0.ttf') format('truetype');}
+@font-face {font-family: 'ProximaNova-Regular';src: url('fonts/274C59_22_0.eot');src: url('fonts/274C59_22_0.eot?#iefix') format('embedded-opentype'),url('fonts/274C59_22_0.woff') format('woff'),url('fonts/274C59_22_0.ttf') format('truetype');}
+@font-face {font-family: 'ProximaNova-Extrabld';src: url('fonts/274C59_19_0.eot');src: url('fonts/274C59_19_0.eot?#iefix') format('embedded-opentype'),url('fonts/274C59_19_0.woff') format('woff'),url('fonts/274C59_19_0.ttf') format('truetype');}
+@font-face {font-family: 'ProximaNova-Light';src: url('fonts/274C59_1C_0.eot');src: url('fonts/274C59_1C_0.eot?#iefix') format('embedded-opentype'),url('fonts/274C59_1C_0.woff') format('woff'),url('fonts/274C59_1C_0.ttf') format('truetype');}
+
 
 
 
@@ -13,9 +35,13 @@ img {border:none;}
 ul, li{text-decoration:none; list-style:none; margin:0; padding:0;}
 
 /* ################### COMMON ################## */
-body {background:url("images/main_bg.jpg") repeat;background-color:#FFFFFF;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#757c91}
+body {background:url("images/main_bg.jpg") repeat;background-color:#FFFFFF;font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#757c91;max-width: 90%;}
 .limited-width {width:940px;}
-section {}
+.section {}
+#CusatLogo {float:left;top:0; z-index:44; position:fixed;}
+#CusatLogo img { max-width: 100%;
+	height: auto; }
+#CusatUni {float:right;top:0; z-index:1; font-size:14px;}
 
 .block-content {margin-bottom:80px;margin-top:80px;transition: all 0.3s ease 0s;}
 H1 {text-align: center;font-weight: normal;}
@@ -60,7 +86,7 @@ strong.medium {font-family:ProximaNova-Semibold;}
 #master-menu #menu-nav nav li a { font-family: 'ProximaNova-Bold';color:#FFFFFF;font-size:13px;letter-spacing:0.5px; text-transform: uppercase;}
 #master-menu #menu-nav nav li:LAST-CHILD {margin-right:0px;}
 #master-menu #menu-nav nav li:hover,#master-menu #menu-nav  li.current-menu-item {background-position:0px 0px;}
-#master-menu #menu-nav #logo-img {display:block;position:absolute;left:50%;margin-left:-50px;block;margin-top:5px;transition: all 0.4s ease 0s;z-index:20}
+#master-menu #menu-nav #logo-img {display:block;position:absolute;left:50%;margin-left:-50px;block;margin-top:5px;transition: all 0.6s ease 0s;z-index:20}
 
 
 /* nav  utilisateur */
