@@ -50,7 +50,7 @@ strong.medium {font-family:ProximaNova-Semibold;}
  
  /* navigation content */
 #master-menu a {text-decoration:none;}
-#master-menu {position:absolute;z-index:5;width:100%;}
+#master-menu {position:fixed;z-index:5;width:100%;}
 #master-menu #menu-nav {height:60px;background-color:#6ec1c2;position:relative;white-space:nowrap;}
 #master-menu #menu-nav #content-nav-left {position:absolute;right:50%;top:0px;transition: all 0.4s ease 0s;}
 #master-menu #menu-nav #content-nav-left li:LAST-CHILD {margin-right:9px;}
