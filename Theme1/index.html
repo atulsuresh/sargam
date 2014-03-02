@@ -36,6 +36,16 @@ $(window).load(function() {
 		
 	if(scroll_from_top+total_offset >= base_height)
 		{
+			
+			
+			
+			$('#logo-img').fadeIn();
+  			$('#logo-img').css({'transform':'scale(1)'});
+  			$('#content-nav-left').css({'margin-right':'50px'});
+            $('#content-nav-right').css({'margin-left':'50px'});
+            $('#user-nav').css({'height':'97px','opacity':1});
+			
+			
 			$('#master-menu').css({'top':"0px"});
 			//$('#infos').text( scroll_from_top + base_height);
 		}
@@ -43,6 +53,15 @@ $(window).load(function() {
 	else
 		{
 			//$('#master-menu').css({'top':init_menu_posY+"px"});
+			
+			
+			
+			$('#logo-img').fadeOut();
+  			$('#logo-img').css({'transform':'scale(0)'});
+  			$('#content-nav-right').css({'margin-left':'0px'});
+            $('#content-nav-left').css({'margin-right':'0px'});
+            $('#user-nav ').css({'height':'0px','opacity':0});
+			
 			var menu_posY = init_menu_posY - scroll_from_top ;
 			$('#master-menu').css({'top':menu_posY+"px"});
 			
@@ -151,7 +170,7 @@ $(window).scroll(function () {
 <li id="menu-item-51" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51"><a title="Events" href="#events" >Events</a></li>
 </ul></nav>		
 
-	    <a href="http:/sargamcusat.in"><img id="logo-img" src="http://www.meetinnov.om/en/wp-content/themes/meetinov/images/common/menu_logo_meetinov.png" ></a>
+	    <a href="http:/sargamcusat.in"><img id="logo-img" src="images/menu_logo_srgm.png" ></a>
 
 		<nav id="content-nav-right" class="menu-right-menu-container"><ul id="menu-right-menu" class="item"><li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="#Grules" >General Rules</a></li>
 <li id="menu-item-58" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58"><a title="Event Rules" href="http://www.meetinnov.com/en/exhibitors" >Erules</a></li>
