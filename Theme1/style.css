@@ -87,8 +87,8 @@ strong.medium {font-family:ProximaNova-Semibold;}
 #master-menu #menu-nav nav li:LAST-CHILD {margin-right:0px;}
 #master-menu #menu-nav nav li:hover,#master-menu #menu-nav  li.current-menu-item {background-position:0px 0px;}
 #master-menu #menu-nav #logo-img {display:block;position:absolute;left:50%;margin-left:-50px;block;margin-top:5px;transition: all 0.6s ease 0s;z-index:20}
-
-
+#master-menu #menu-nav nav li:hover { opacity:0.7;  }
+	
 /* nav  utilisateur */
 #master-menu #user-nav {overflow:hidden; height:97px;padding-left:50%;background:url("../images/common/central_cercle.png") no-repeat top center;transition: all 0.4s ease 0.1s;}
 #master-menu #user-nav nav {height:39px;width:381px;padding-right:10px; left:50%;margin-left:78px;background-color:#FFF;text-align: right; padding-top:5px;}
@@ -118,7 +118,12 @@ strong.medium {font-family:ProximaNova-Semibold;}
 
 #landing-intro {position:fixed; left:0;top:0;right:0;bottom:0;z-index:1;margin-top:-60px;}
 #landing-intro-relative-content { position:relative;height:100%;}
-
+.box-eve{
+	width:29.25608342989571%;
+	margin:0 10px;
+	padding:5px;
+	display:inline-block;
+}
 
 /*#landing-intro {height:100%;height:713px;position: static;}*/
 #l-left,#l-right {width:20%;display:inline-block;vertical-align: middle;width:50%;}
@@ -127,14 +132,14 @@ strong.medium {font-family:ProximaNova-Semibold;}
 #l-left.en {height:100%; background:url("../images/common/logo_accueil_en.png") no-repeat center right;} 
 #l-right {text-align: left;}
 #l-right #l-right-content {display:inline-block; width:450px;padding-left:25px; padding-right:28px;}
-#l-right-content H1 {text-align: right;padding:100px 0 10px 0;font-family:zag_regularregular;font-weight:normal;color:#f69524;font-size:75px;text-transform: uppercase;line-height:0.95;border-bottom: 1px solid #757c91;}
+#l-right-content H1 {text-align: right;padding:100px 0 10px 0;font-family:zag_regularregular;font-weight:normal;color:#f69524;font-size:75px;text-transform: uppercase;line-height:0.95;border-bottom: 1px solid #757c91;text-shadow: 1px 1px #000;}
 #l-right-content H1 .edition {color:#7f2b5f;font-size:33px;font-family:zag_boldregular;padding-right:10px;}
 #l-right-content H1 .edition  sup {padding:0px;margin:0px;text-transform:none;font-size:18px;}
 #l-right-content #infos {text-transform:uppercase;width:100%;text-align: center;padding:15px 0 0 0}
 #l-right-content #infos  #infos-texte {letter-spacing: 0px; font-size:13px;font-family:ProximaNova-Bold; }
 
 /* Boutons navigations */
-#landing-nav {padding-top:34px;}
+#landing-nav {padding-top:28px; padding-left:150px;}
 .bouton-bleu,.bouton-rose {border-radius:5px;font-family:zag_regularregular;width:204px;height:50px;display:inline-block;color:#FFFFFF;line-height:50px;text-align: center;text-transform: uppercase;font-size:28px;cursor:pointer;text-decoration: none;}
 .bouton-bleu {background-color:#25b0b0;}
 .bouton-rose {background-color:#e41a6a;float:right;}
@@ -155,6 +160,15 @@ strong.medium {font-family:ProximaNova-Semibold;}
 .buillet-type1 lh {color:#27b0b1; font-size:29px;display:block; margin-bottom:17px; font-family:zag_regularregular;text-transform: uppercase;}
 .buillet-type1 lh.ss-title,.white-box1 p.ss-title,.ss-title{font-family:Arial, Helvetica, sans-serif; margin-bottom:0px;color:#414450;font-size:16px;text-transform:none;font-weight:bold;}
 .buillet-type1 li {color:#414450;margin-top:6px;margin-bottom:6px;padding-left:15px;font-size:14px;background:url("images/bullet1.png") no-repeat left 5px;}
+
+.buillet-type1 ol { margin-left:20px;  }
+.buillet-type1 ol li { display:inline-block; margin-right:20px;  }
+
+
+#Eventrules { margin-left:15px;}
+#Eventrules lh { background:url("images/bullet1.png") no-repeat left 5px; padding-left:10px; }
+
+
 
 
 /* buillet type 2 */
@@ -181,3 +195,42 @@ strong.medium {font-family:ProximaNova-Semibold;}
 #intro-texte .first-part {height:240px;}
 #intro-texte .second-part .item1 {width:411px;margin-left:20px;margin-right:80px;border-right:1px solid #d2d2d2;}
 #intro-texte .third-part {position:absolute;bottom:-15px;width:100%;text-align:center;left:0px;}
+
+
+/*Events Overview  */
+.stats2 {margin-left:-32px; height:186px;white-space:nowrap;font-size:0px; margin-bottom:30px; /*text-shadow: 2px 2px #ff0000;*/ text-shadow: 1px 1px #000;}
+.stats2 li {width:187px;height:187px;display:inline-block;margin-right:1px;vertical-align:top;position:relative;}
+.stats2 p.chiffre-clef {font-size:50px;color:#FFFFFF;text-align:center;margin-top:65px;font-family:"ProximaNova-Light"; letter-spacing:-1px;}
+.stats2 p.legende {text-align:center;font-size:14px;color:#FFF;font-family:"ProximaNova-Bold";padding-top:25px;}
+.stats2 li .defaut {width:100%;height:100%;position:absolute;top:0px;left:0px;z-index:2;}
+.stats2 li .hover {position:absolute;width:100%;height:187px;line-height:187px;;top:0px;left:0px;z-index:3;font-size:14px;text-align:center;color:#FFF;transition: all 0.2s ease 0s;white-space: normal;}
+.stats2 li .hover p {display:inline-block;line-height: 1.2;vertical-align: middle;padding:0 45px 0 45px;font-size:50px;font-family:ProximaNova-Regular}
+.stats2 li a { text-decoration:none; color:#FFF}
+.stats2 li a:hover { text-decoration:none; color:#FFF; box-shadow: 1px 1px 12px #555; transition: all 0.2s ease 0s; }
+
+
+.blue-box {background-color:#24a2a0;}
+.pink-box {background-color:#da0057;}
+.purple-box {background-color:#6a1b4c;}
+.orange-box {background-color:#f1831d;}
+.green-box {background-color:#b7ca1b;}
+
+.content-box {width:940px;margin-left:auto;margin-right:auto;position:relative;}
+/* ############# FOOTER #################### */
+footer { background-color:#6ec1c2;height:205px;padding-bottom:35px;}
+footer .content-box { background: url("images/Sargam_logofooter.png") no-repeat right bottom 0px; height:160px;padding-top:30px; }
+footer #footer-nav-user {width:192px;float:left; padding-top:33px;}
+footer #footer-nav-user a {color:#25b0b0; display:block; width:192px;height:33px;line-height:35px;background-color:#FFFFFF;border-radius:5px;margin-bottom:10px;text-align: center; font-family:ProximaNova-Semibold;font-size:14px;text-decoration:none;text-transform:uppercase;letter-spacing:1px;}
+footer #footer-nav-user a#footer-inscrivez-vous {font-family:ProximaNova-Bold;margin-bottom:31px;}
+footer #footer-action-user {float:left;margin-left:44px;}
+footer #footer-action-user #reseau {margin-top:40px;text-align: center;}
+footer #footer-action-user #reseau a {display:inline-block;margin-right:10px;}
+
+#footer-action-user h2 {color:#FFF; border-bottom:#FFF thin solid}
+#footer-action-user a { color:#fff; text-decoration:none	}
+#footer-action-user li { background:url("images/bullet1.png") no-repeat left 5px; padding-left:10px;}
+/* Formulaires */
+footer .footer-form {display:inline-block;margin-right:34px;}
+footer .footer-form label {display:block;color:#FFF;font-size:14px;text-transform: uppercase;font-family:ProximaNova-Semibold;margin-bottom:13px;}
+footer .footer-form .field {vertical-align:top; padding:0px;width:174px; padding-left:10px; font-size:14px; height:35px; background-color:transparent;border:1px solid #FFF;color:#ffffff;font-family:ProximaNova-Semibold;border-bottom-left-radius:5px;border-top-left-radius:5px; }
+footer .footer-form .submit {vertical-align:top;background-color: transparent; border: 1px solid #FFF;height:37px;width:40px;border-bottom-right-radius:5px;border-top-right-radius:5px;border-left: none;color:#FFF;font-family:ProximaNova-Semibold;font-size:14px;text-transform: uppercase;}
