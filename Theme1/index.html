@@ -5,14 +5,14 @@
 <title>Untitled Document</title>
 <link rel="stylesheet" href="style.css" />
 <script src="jquery.js"></script>
-<script src="mainjs.js"></script>
+<script src="maindjs.js"></script>
 <script>
 
 //init_menu_posY = $(window).height() - total_offset;
 
 $(window).load(function() {
 	//$("#master-menu").css({'top':init_menu_posY+"px"});
-	
+	 
 	var hauteur_bandeau_actu = 35;
 	var hauteur_menu_visible = 55;
 	var total_offset = hauteur_bandeau_actu + hauteur_menu_visible;
@@ -20,18 +20,40 @@ $(window).load(function() {
 	var scroll_menu_anim = false;
 	
 	
+	
 	function jqUpdateSize(){
     // Get the dimensions of the viewport
     var width = $(window).width();
     var height = $(window).height();
-	init_menu_posY = $(window).height() - total_offset;
-	$('#master-menu').css({'top':init_menu_posY+"px"});
+	init_menu_posY = height - total_offset;
+	//$('#master-menu').css({'top':init_menu_posY+"px"});
 	
+	var base_height = $(window).height();
+  	var scroll_from_top = $(window).scrollTop();
+	
+		if ($('#landing-convention').length > 0 ) scroll_menu_anim = true;
+		
+		
+	if(scroll_from_top+total_offset >= base_height)
+		{
+			$('#master-menu').css({top:"0px"});
+			$('#infos').text( scroll_from_top + base_height);
+		}
+		
+	else
+		{
+			//$('#master-menu').css({'top':init_menu_posY+"px"});
+			var menu_posY = init_menu_posY - scroll_from_top ;
+			$('#master-menu').css({'top':menu_posY+"px"});
+			
+		}
 
 
 };
 $(document).ready(jqUpdateSize);    // When the page first loads
 $(window).resize(jqUpdateSize);     // When the browser changes size
+$(window).scroll(jqUpdateSize);		
+
 
 
 /*
@@ -53,17 +75,36 @@ initMenu_new();
 	});
 	
 	*/
-	});
+	
+	
+	
+	/*
+	var base_height = $(window).height();
+  			var scroll_from_top = $(window).scrollTop();
+	
 	
 	var cur_menu_pos = $("master-menu").position();
-	if(cur_menu_pos != 0)
+	if(scroll_from_top+total_offset >= base_height || !scroll_menu_anim )
 		{
-			$(document).ready(jqUpdateSize);    // When the page first loads
-$(window).resize(jqUpdateSize);     // When the browser changes size
+			$('#master-menu').css({top:"0px"});
+			$('#infos').text( scroll_from_top + base_height);
 		}
 		
 	else
-		$('#master-menu').css({top:"0px"});
+		{
+			$(document).ready(jqUpdateSize);    // When the page first loads
+$(window).resize(jqUpdateSize);     // When the browser changes size
+$('#infos').text( scroll_from_top + base_height);
+		}
+	*/
+	
+	});
+	
+	
+	
+
+		
+		
 	
 	
 </script>
@@ -105,7 +146,7 @@ ground.style.backgroundPosition = "0 " + groundparallax + "px";
 <li id="menu-item-51" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51"><a title="Events" href="#events" >Events</a></li>
 </ul></nav>		
 
-	    <a href="http:/sargamcusat.in"><img id="logo-img" src="http://www.meetinnov.com/en/wp-content/themes/meetinov/images/common/menu_logo_meetinov.png" ></a>
+	    <a href="http:/sargamcusat.in"><img id="logo-img" src="http://www.meetinnov.om/en/wp-content/themes/meetinov/images/common/menu_logo_meetinov.png" ></a>
 
 		<nav id="content-nav-right" class="menu-right-menu-container"><ul id="menu-right-menu" class="item"><li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="#Grules" >General Rules</a></li>
 <li id="menu-item-58" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58"><a title="Event Rules" href="http://www.meetinnov.com/en/exhibitors" >Erules</a></li>
@@ -196,10 +237,10 @@ ground.style.backgroundPosition = "0 " + groundparallax + "px";
         <H2>About</H2>
         	<p class="accueil P1">
             Cochin University of Science and Technology, the arena of talented youth, is about to witness the cultural extravaganza, Sargam'13 .
-
+</br></br>
 The CUSAT Youth Festival stands unique, converging artistic talents from Kasargod in the Northmost to Trivandrum in the South.These talented youth, setting aside their scholastic activities and academic pursuits, come to celebrate this annual cultural fiesta.
-
-Version new of Cochin University Union Arts Festival is to be unveiled 12th of March at the Thrikkakara Campus of CUSAT.
+</br></br>
+Version new of Cochin University Union Arts Festival is to be unveiled 12th of March at the Thrikkakara Campus of CUSAT.</br></br>
             </p>
         </div>
     </div>
