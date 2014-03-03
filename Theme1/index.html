@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="style.css" />
 <script src="jquery.js"></script>
 <script src="maindjs.js"></script>
+<script src="SinglePageNav.js"></script>
 <script>
 
 //init_menu_posY = $(window).height() - total_offset;
@@ -33,7 +34,7 @@ $(window).load(function() {
 	
 		if ($('#landing-convention').length > 0 ) scroll_menu_anim = true;
 		
-		
+	/***Menu Scroll Animations	**/
 	if(scroll_from_top+total_offset >= base_height)
 		{
 			
@@ -66,13 +67,63 @@ $(window).load(function() {
 			$('#master-menu').css({'top':menu_posY+"px"});
 			
 		}
+		
+	/** End Menu Scroll Animations**/
+	
+	/** EachDiv Aniamtions**/
+	
+		$(".block-content").each(function(){
+			//console.log ( $(this).offset().top + "anim");
+			if ( ( $(window).scrollTop()  < $(this).offset().top + $(this).height() - 150) && $(window).scrollTop() + $(window).height() > $(this).offset().top +100 ) { //$(this).height()+ $(this).offset().top-150  > $(window).scrollTop()
+
+				$(this).css({'transform':'scale(1,1)','opacity':1});
+			}else {
+				$(this).css({'transform':'scale(0.5,1)','opacity':0});
+			}
+		});
+		
+		/** end Each Div Aniation**/	
+		
+		
+		
 
 
 };
 $(document).ready(jqUpdateSize);    // When the page first loads
 $(window).resize(jqUpdateSize);     // When the browser changes size
-$(window).scroll(jqUpdateSize);		
+$(window).scroll(jqUpdateSize);	
 
+	$(".stats2 li").hover(function(element){
+  			//alert(element);
+  			$(this).css({'transform':'scale(1.4)','box-shadow': '1px 1px 12px #555','opacity':1});
+  		},function(){
+ 			$(this).css({'transform':'scale(1)','opacity':1,'box-shadow': '0px 0px 0px #555' });
+	})	
+
+
+	
+	
+	
+	
+	
+	/** Simple Button Animations **/
+	
+$("#GrulesButton").click(function(){
+	$('#Genrules').toggle("slow");
+});
+
+$(".stats2").click(function(){
+	var activetab = $(this).attr("rel");
+	$("#" + activetab).toggle("slow");
+});
+
+	
+	/**Master-menu hover Animations **/
+	
+	
+	
+	
+	
 
 
 /*
@@ -122,6 +173,13 @@ $('#infos').text( scroll_from_top + base_height);
 	
 	
 
+		$('.bouton-bleu').hover(function() {
+		
+		$(this).animation({'background-color' : '#da0057'});
+	}, function() {
+		$(this).animation({'background-color' : '#25b0b0'});
+	/*** END Simple Button Animations **/
+	});
 		
 		
 	
@@ -152,41 +210,69 @@ $(window).scroll(function () {
     $("#landing-convention").css("background-position","50% " + (-($(this).scrollTop() / 4)) + "px" );
 });
 </script>
+
+
+<script>
+
+
+
+
+//Toggling Rules thing
+
+//END Togle Rules
+
+
+
+$(function(){
+	$("a#menu-nav").bind("click", function (event) {
+		event.preventDefault ? event.preventDefault() : event.returnValue = false;
+		var target = $(this).attr("href");
+		$("html, body").stop().animate({
+				scrollLeft: $(target).offset().left,
+				scrollTop: $(target).offset().top
+			}, 1200);
+	});
+});
+
+
+</script>
 </head>
 
 <body>
 
 
-
+<div id="CusatUni">Cochin University Union 2012-13</div>
 
 	<!--- Menu Tag---->
     <header id="master-menu">
 
 	<div id="menu-nav">
 
-	<nav id="content-nav-left" class="menu-left-menu-container"><ul id="menu-left-menu" class="item"><li id="menu-item-54" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-54"><a title="home" href="#landing-intro" >Home</a></li>
-<li id="menu-item-53" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53"><a title="Program" href="#S14about" >About</a></li>
+	<nav id="content-nav-left" class="menu-left-menu-container"><ul id="menu-left-menu" class="item"><li id="menu-item-54" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-54"><a title="home" href="#	" >Home</a></li>
+<li id="menu-item-53" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53"><a title="Program" href="#intro-about" >About</a></li>
 <li id="menu-item-52" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52"><a title="Conferences" href="#Results-Live" >Results</a></li>
-<li id="menu-item-51" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51"><a title="Events" href="#events" >Events</a></li>
+<li id="menu-item-51" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51"><a title="Events" href="#Events" >Events</a></li>
 </ul></nav>		
 
 	    <a href="http:/sargamcusat.in"><img id="logo-img" src="images/menu_logo_srgm.png" ></a>
 
-		<nav id="content-nav-right" class="menu-right-menu-container"><ul id="menu-right-menu" class="item"><li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="#Grules" >General Rules</a></li>
-<li id="menu-item-58" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58"><a title="Event Rules" href="http://www.meetinnov.com/en/exhibitors" >Erules</a></li>
-<li id="menu-item-55" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55"><a title="Downloads" href="#Downloads" >Downloads</a></li>
+		<nav id="content-nav-right" class="menu-right-menu-container"><ul id="menu-right-menu" class="item"><li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="#Rules-listing" >General Rules</a></li>
+<li id="menu-item-58" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58"><a title="Event Rules" href="#Rules-listing" >Erules</a></li>
+<li id="menu-item-55" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55"><a title="Downloads" href="#footer-nav-user" >Downloads</a></li>
+<!--
 <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a title="Photo Gallery" href="#Gallery" >Gallery</a></li>
+-->
 </ul></nav>	</div><!-- fin menu-nav  -->
 <!--
     <div id="user-nav">
 
     	<nav>
 
-			<a href="http://www.meetinnov.com/" id="fr" class="langue-item">FR</a>
+			<a href="" id="fr" class="langue-item">FR</a>
 
-			<a href="http://www.meetinnov.com/en/" id="en" class="selected langue-item">EN</a>
+			<a href="" id="en" class="selected langue-item">EN</a>
 
-			<a href="mailto:contact@meetinnov.com" id = "search-link"></a>
+			<a href="" id = "search-link"></a>
 
 		</nav>
 
@@ -196,13 +282,14 @@ $(window).scroll(function () {
 
 	<!-- Enf Menu Tag----> 
     
+    <div id="CusatLogo"><img src="images/CUSAT.png" /></div>
     
     
     <!--- Landing Intro Page -->
     
     
     <section id="landing-intro">
-
+	
 	
 	<div id="l-left" class="fr">
     	
@@ -230,15 +317,7 @@ $(window).scroll(function () {
 
 
 
-						<div id="soutient-container">
-
-				
-
-				<div style="display:none"><img src="http://www.meetinnov.com/wp-content/themes/meetinov/images/common/img_soutient.png"></div>
-
-				<div style="display:none"><img src="http://www.meetinnov.com/wp-content/themes/meetinov/images/common/img_soutient.png"></div>
-
-			</div><!-- fin soutient container -->
+						
 
  		</div><!-- fin l-right-content -->
 
@@ -270,53 +349,468 @@ Version new of Cochin University Union Arts Festival is to be unveiled 12th of M
     </div>
     
     
-    <div id="events-listing" class="block-content">
-    <h1 class="main">Rules</h1>
+    
+    
+    
+    
+    
+    
+    
+     <div id="Events" class="block-content">
+    <h1 class="main">Events</h1>
     	<div class="white-box1">
-        
-    	
-        
-        	<ul class="buillet-type1 multi-col item1">
-            	<lh>General Rules</lh>
-                <li>The right to participate in the competitions of University Science and Technology youth festival is restricted to the fulltime and part-time students of constituent departments / Colleges of Cochin University.</li>
-                <li>The office bearers of the Cochin University Union are not eligible to participate in the youth festival competitions.</li>
-                
-            </ul>
-        
-        </div>
-        
-    </div>
-    
-    
-    
-    
-    
-    
-    
-     <div id="EventRules" class="block-content">
-    <h1 class="main">Event Rules</h1>
-    	<div class="white-box1">
-        
+        <!--
     	 <ul id="EventRlists" class="hoz-listing">'
          	<li><a href="#">Literary</a></li>
             <li><a href="#">Music</a></li>
             <li><a href="#">Dance</a></li>
+            <li><a href="#">Fine arts</a></li>
+            <li><a href="#">Theatre</a></li>
                 </ul>
-        
-        	<ul class="buillet-type1 multi-col item1">
-            	<lh>General Rules</lh>
+                
+               -->
+               
+      <!-- Colorfull Boxes Starts -->  
+      
+      <ul class="stats2">       
+               <li  rel="#LiteraryList" class="blue-box defaut">
+				
+                    	<a href="#Literary" id="l"><p class=" defaut chiffre-clef">Literary</p></a>
+                    
+					
+                    
+				</li>
+
+				<li class="pink-box">
+
+						<a href="#Finearts" id="f"><p class="chiffre-clef">Fine Arts</p></a>
+
+				</li>
+
+				<li class="purple-box" >
+
+						<a href="#Music" id="m"> <p class="chiffre-clef">Music</p></a>
+
+				</li>
+
+				<li class="orange-box">
+
+					
+	<a href="#Finearts"><p class="chiffre-clef">Theatre</p></a>
+				</li>
+
+				<li class="green-box">
+
+					
+<a href="#Finearts">	<p class="chiffre-clef">Dance</p></a>
+
+				</li>
+
+			</ul><!-- 	ColorfULL Boxes End here -->
+
+
+
+
+
+
+
+
+        <div id="SelectEventList" >
+        	<ul class="buillet-type1 multi-col item1" id="DanceList" style="display :block;">
+            	<lh>Dance</lh>
+                
+                
+                
+                
+                
+						<li>1   Solo dance Folk	</li>
+						<li>2   Classical dance Mohiniyattam	</li>
+						<li>3   Classical dance Bharatanatiyam	</li>
+						<ol>
+							<li> Male</li>
+							<li> Female</li>
+						</ol>
+						<li>4   Classical dance Kuchipudi	</li>
+						<ol>
+							<li> Male</li>
+							<li> Female</li>
+						</ol>
+                        
+						<li>5   Adapt tune	</li>
+						
+	
+						<li>6   Group dance	</li>
+						<li>7   Oppana-male	</li>
+						<li>8   Thiruvathira	</li>
+						<li>9   Step in synchro	</li>
+						<li>10   Oppana-female	</li>
+						<li>11   Video choreography	</li>
+						<li>12   Nostalgia	</li>
+						<li>13   Western Dance	</li>
+						<li>14   Ottamthullal</li>
+		
                 
                
-                <li>The right to participate in the competitions of University Science and Technology youth festival is restricted to the fulltime and part-time students of constituent departments / Colleges of Cochin University.</li>
-                <li>The office bearers of the Cochin University Union are not eligible to participate in the youth festival competitions.</li>
+               
+                
+            </ul><!-- END Dance List-->
+            
+            
+            
+            
+            
+            <ul  class="buillet-type1 multi-col item1" id="LitereryList" style="display :block;">
+            
+            <lh>Literary</lh>
+            
+            <li>Essay writing Malayalam</li>
+						<li> Essay writing English</li>
+						<li> Essay writing Hindi</li>
+						<li> Poetry writing Malayalam</li>
+						<li> Poetry writing English</li>
+						<li> Poetry writing Hindi</li>
+					
+				
+					
+						<li> Short story writing Malayalam</li>
+						<li> Short story writing English</li>
+						<li> Short story writing Hindi</li>
+						<li> Elocution Malayalam</li>
+						<li> Elocution English</li>
+						<li> Elocution Hindi</li>
+					
+				
+				
+						<li> Debate Malayalam</li>
+						<li> Debate English</li>
+						<li> Film review</li>
+						<li> Recitation Malayalam</li>
+						<li> Recitation English</li>
+						<li> Recitation Hindi</li>
+						<li> Quiz</li>
+            </ul><!-- END Literery List -->
+            
+            
+            
+             
+            <ul   class="buillet-type1 multi-col item1" id="LitereryList" style="display :block;">
+            
+            <lh>Music</lh>
+						<li>1 Light music Male</li>
+						<li>2 Light music Female</li>	
+						<li>3 Classical music</li>	
+						<li>4 Western solo</li>	
+						<li>5 Instrumental percussion eastern</li>	
+						<li>6 Instrumental non-percussion wind eastern</li>	
+						<li>7 Instrumental Non-percussion Wind western</li>	
+					
+				
+					
+						<li>8 Group music</li>	
+						<li>9 Western group song</li>	
+						<li>10 Instrumental non percussion string eastern</li>
+						<li>11 Instrumental non percussion String western</li>	
+						<li>12 Ganamela</li>	
+						<li>13 Mappilapaattu</li>	
+						<li>14 Percussion western</li>	
+						<li>15 Naadanpaattu</li>	
+					</ul>
+            
+            
+            
+            <ul    class="buillet-type1 multi-col item1" id="LitereryList" style="display :block;">
+            
+            <lh>Fine Arts</lh>
+						<li>1  Painting Oil color</li>
+						<li>2  Painting Water color</li>	
+						<li>3  Pencil drawing	</li>
+						<li>4  Poster design</li>	
+						<li>5  Caricature</li>		
+				
+				
+						<li>6  Collage</li>
+						<li>7  Clay modeling</li>	
+						<li>8  Cartooning</li>	
+						<li>9  Photography</li>	
+						<li>10 Rangoli</li>	
+					</ul>
+            
+            
+            
+            
+            
+            
+        
+        </div>
+        
+        </div><!-- END SelectEventRules -->
+        
+    </div>
+    
+    
+    
+    <div id="Rules-listing" class="block-content">
+    <h1 class="main">Rules</h1>
+    	<div class="white-box1">
+        
+    	
+        <h2 id="GrulesButton"><a herf="#Genrules">General Rules</a></h2>
+        	<ul class="buillet-type1 multi-col item1" id="Genrules" style="display:none">
+            	
+                
+                <!-- General Rules Stuffs -->
+      <li>The right to participate in the competitions of University Science and Technology youth festival is restricted to the fulltime and part-time students of constituent departments / Colleges of Cochin University.</li>
+<li>The office bearers of the Cochin University Union are not eligible to participate in the youth festival competitions.</li>
+<li>Any student of CUSAT other than the office bearers of Cochin university union can participate in the youth festival competitions even if they are given different charges (including Convenership) for the conduct of the youth festival.</li>
+<li>The overall charge of each team and the team selection organization and participation rests with the General Secretary of each College Union assisted by the Arts Club Secretary of the College.</li>
+<li>Participants must bring their own musical instruments, costumes,etc. or other special items required for different events. </li>
+<li>An item in the competition will be conducted only if there is a minimum of three entries for solo items and three for group items .The competition for an item will be conducted even if the minimum required is not met due to the withdrawal of entries.</li>
+<li>The university union will arrange stage and stage requirements .Special setting if required for drama, skit, etc. will have to be arranged by the participating teams. </li>
+<li>No make up will be provided .Make up man, materials,etc. will have to be arranged by the participating teams.</li>
+<li>Only for the following items external help (background music, lighting etc) at performance only can be sought if not specified otherwise. Solo dance, Classical dance ,Group dance , Oppana , Mime, etc.</li> 
+<li>A rolling trophy instituted by the University Union will be awarded to the winning team . Further there will be another trophy for the runner up team. 
+<li> Points awarded<br/>
+    Individual items: 1st place: 5 points <br/>
+                         2nd place: 3 points <br/>
+                         3rd place: 1 point<br/>
+<br/><br/>
+    Group items: 1st Place: 10 points <br/>
+                         2nd place: 6 points <br/>
+                         3rd place: 2 points<br/></li>
+
+<li>Steering committee headed by the General Convener will be the superior body and the members of the participating institution will have to strictly abide by the rules and regulations laid down from time to time by the steering committee of the Union</li>
+<li>If any dispute regarding the results of the competition or such other matter arises the matter shall be referred to the Jury of Appeal and their decision shall be final<br/>
+                                        THE JURY OF APPEAL<br/>
+                                            The Honorary Treasurer <br/>
+                                                Chairman <br/>
+                                                Vice chairman <br/>
+                                               General Secretary <br/>
+                                                Secretary <br/>
+                                                of the university union <br/>
+                                    and General Convener<br/>
+
+Complaints if any may be forwarded to the General Convener in writing through the concerned staff member who is in charge of the institution or team within an hour after the announcement of the results. The charge of an appeal will be Rs.500. </li>
+<li>Competition will be judged by the panel of judges appointed by the University Union . Each panel will have a minimum of two members except for quiz. 
+<li>If a substitute wishes to take part in an item it should be reported to the program committee by the General Secretary or Arts Club Secretary of the concerned College, atleast one hour before the commencement of the competition. </li>
+<li>Disqualification for violation of eligibility rules. Any disqualification of a participant on the ground of ineligibility will result in the automatic disqualification of the contingent for that arts festival </li>
+<li>Scoring: 
+The position for different events shall be awarded on the basis of the average of the marks awarded by the panel of judges generally, the variations of the marks awarded by different judges shall not be grater than 30%.if the difference between the highest and lowest marks awarded exceeds 30% than the average of the two marks, whose difference does not exceeds 30% shall be taken. However in case the difference between the marks awarded by the three different judges is greater than 30% shall be taken as the basis and the average of these two marks is taken</li> 
+<li>Five students from each affiliated college and five students from University Main Campus (all departments) can participate in the individual events and two teams from each affiliated college and main campus can participate in the group events.</li>
+<li>The time schedule and the general rules of the events can be changed by the steering committee without prior notice. </li>
+<li>Each participant and accompanist should bring their identity card and should produce it on demand. </li>
+<li>Audio cassettes can be used for all the dance items and organizers will not be held responsible, in case of any audio failure or low audible quality. </li>
+<li>An individual can participate in five numbers of individual items and five numbers of group items. </li>
+<li>The Programme Committee may reschedule and pre announce programmes on account of any sudden development. </li>
+<li>Any further changes to the rules can be made without notice by the University Union. </li>
+</ol>
+
+NOTE
+<ol>
+<li>Kalathilakam and Kalaprathibha will be selected on the basis of total points secured in individual items and including dance.If such a person does not exist, points earned will be considered</li>
+<li>In the case of tie for the above titles, the number of 1st places won by the participants will be considered</li>
+<li>Further questions if any will be settled considering places won in group events</li>
+<li>In case, the performance exceeds the time limit the curtain will be put down and the micro phone will be cut off</li>
+<li>A warning bell will be given at the last but 1 minute of the every competition</li>
+                <!-- End General Rules -->
+                
+                
+                
                 
             </ul>
+            
+            
+   <!------------------------------->
+   <br/><br/><br/>         
+            
+            
+             <h2 id="Erulesbutton"><a herf="#Eventrules">Event Rules</a></h2>
+             
+             <script>
+			 	
+			 
+			 </script>
+             
+             <ul class="buillet-type1 multi-col item1" id="Eventrules" style="display:none">
+             <lh>Music</lh>
+             <li>LIGHT MUSIC (MALE AND FEMALE) 
+<ul>
+<li>Separate competitions will be there for male and female participants </li>
+
+<li>Maximum number of accompanists is two(Student of the same college) </li>
+
+<li>Only Malayalam non-film songs are allowed </li>
+
+<li>The duration of the song shall not exceed five minutes </li>
+
+<li>Judgment will be based on the qualities like swara, thala, composition, general impression etc </li>
+</ul>
+</li>
+
+<li> CLASSICAL MUSIC 
+<ul>
+<li>Maximum number of accompanists is two (Student of the same college) </li>
+
+<li>Event should be presented in Carnatic style only </li>
+
+<li>Maximum time allowed for performance is ten minutes </li>
+
+<li>Film songs are not allowed </li>
+
+<li>Judgment will be based on the qualities like swara, thala, composition, general impression etc </li>
+
+<li>Only instruments for sruthi are allowed</li>
+</ul>
+</li>
+
+<li>WESTERN VOCAL SOLO
+<ul>
+<li>The number of accompanists for playing instruments of the stage (Students of the same college) should not be more than one.</li>
+<li>The language of the song should be English only.</li>
+<li>Duration of the song shall not exceed five minutes.</li>
+<li>Judgment will be made on qualities like composition, rhythm, co-ordination and general.</li>
+</ul></li>
+
+
+
+<li> PERCUSSION EASTERN
+<ul>
+<li>Maximum number of accompanists is one.</li>
+<li>Participant shall bring instruments</li>
+<li>Time allotted for the event is not less than eight minutes and not more than ten minutes</li>
+<li>Judgment will be based on the qualities like thala, composition, general impression etc</li>
+<li>Electronic instruments are not allowed for the performance</li>
+<li> The accompanist shall not play a percussion instrument</li>
+</ul></li>
+
+
+<li>  WIND TYPE
+<ul>
+<li>Separate competitions will be held for Eastern as well as western streams</li>
+<li>The accompanist shall not play a wind instrument</li>
+<li>All other rules are the same as above</li>
+
+</ul></li>
+
+
+
+
+<li>STRING TYPE
+<ul>
+<li>Separate competitions will be held for Eastern as well as western streams</li>
+<li>The accompanist shall not play a string instrument</li>
+<li>All other rules are the same as above</li>
+
+</ul></li>
+
+
+<li>GROUP MUSIC
+<ul>
+<li> No film song should be presented as group song</li>
+<li>The group song should be taken from Indian origin which can be of any regional language</li>
+<li> Judgment will be based on the quality like singing only</li>
+<li>Maximum number of singers in a group can be six. Maximum number of accompanist playing instruments shall be three</li>
+
+</ul></li>
+
+
+
+<li>WESTERN GROUP SONG
+<ul>
+<li> The language of the song(s) should be in English only</li>
+<li>Maximum number of vocalists in a team is six</li>
+<li> key board facility can be used</li>
+<li> Judging will be based on the quality of singing and orchestra only</li>
+<li>Maximum time allotted is ten minutes</li>
+
+</ul></li>
+
+
+
+<li>GANAMELA
+<ul>
+<li> Maximum number of participants shall be ten</li>
+<li> The orchestra shall be played by the students of the respective colleges only</li>
+<li> The time allotted for preparation is ten minutes and for the performance is twenty</li>
+<li>  Computer orchestration is not allowed</li>
+
+
+</ul></li>
+
+
+
+
+<li>PERCUSSION WESTERN 
+<ul>
+<li>Maximum number of accompanists is one</li>
+<li>Participant shall bring instruments</li>
+<li>Time allotted for the event is not less than eight minutes and not more than ten minutes</li>
+<li>. Judgment will be based on the qualities like thala, composition and general impression</li>
+<li> The accompanists shall not play a percussion instrument </li>
+
+
+
+</ul></li>
+
+
+<li>NAADANPAATTU
+<ul>
+<li>The group can consist of all boys or girls or combined with a maximum of six participants and five accompanists.</li>
+<li>The duration of the performance will be a minimum of 8 and a maximum of 15 minutes</li>
+<li>This does not include setting time which shall not be more than 5 minutes</li>
+<li>Film songs are not permitted </li>
+<li>The team must present folk songs in Malayalam </li>
+
+</ul></li>
+
+       </ul><!-- END Music UL-->      
+             
+             
         
         </div>
         
     </div>
     
-    
+
+
+
+
+<footer>
+
+		<div class="content-box">
+
+			<nav id="footer-nav-user">
+
+								<a id="footer-contactez-nous" class="scale-effect" href="mailto:contact@sargamcusat.in">Contact us</a>
+
+			</nav>
+
+			<div id="footer-action-user">
+
+			<h2>Downloads</h2>
+            <ul class="buillet-type2">
+            	<li><a href="#footer-nav-user">Event List</a></li>
+                <li><a href="#footer-nav-user">Registration Form</a></li>
+            </ul>
+				
+
+
+				<nav id="reseau">
+
+
+				</nav>
+
+			</div>
+
+
+
+		</div>
+
+	</footer>
+
+
+
+
+
 
 
 </div><!-- Landing Conventung END----->
@@ -329,7 +823,24 @@ Version new of Cochin University Union Arts Festival is to be unveiled 12th of M
 
 
 
+<script>
 
+            // Prevent console.log from generating errors in IE for the purposes of the demo
+            if ( ! window.console ) console = { log: function(){} };
+
+            // The actual plugin
+            $('#menu-nav').singlePageNav({
+                offset: $('#menu-nav').outerHeight(),
+                filter: ':not(.external)',
+                updateHash: true,
+                beforeStart: function() {
+                    console.log('begin scrolling');
+                },
+                onComplete: function() {
+                    console.log('done scrolling');
+                }
+            });
+        </script>
 
 
 
