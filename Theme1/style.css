@@ -257,3 +257,19 @@ footer .footer-form .submit {vertical-align:top;background-color: transparent; b
 .af-box H3 {cursor:pointer; font-weight: normal;font-family:ProximaNova-Bold;text-align: left;width:185px;float:left;overflow:hidden;padding-left:15px;}
 .af-box H3:hover {opacity:0.7;}
 .top_fleche {background:url("../images/common/fleche_top1.png") no-repeat left center;padding-left:0px;padding-right:0px;margin:0px;padding-left:35px;margin-right:-52px;}
+
+
+/* actu-writings */
+.actu-main {padding-top:28px;}
+.actu-main article {width:310px;min-height:230px;display:inline-block;margin-bottom:40px;vertical-align:top;}
+.actu-main article .left-col {width:62px;display:inline-block;vertical-align: top;}
+.actu-main article .left-col .date {font-size:15px;color:#f69524;text-align:right; font-family:ProximaNova-Regular; height:30px;display:block;baclground-color:red;background:url("../images/common/picto_triangle_orange.png") no-repeat bottom left; }
+.actu-main article .right-col {display:inline-block;vertical-align: top;width:210px;margin-left:5px;}
+p.article-texte,.actu-more-content,body .actu-more-content p {font-size:12px;font-family:ProximaNova-Regular;color:#303030}
+.read-more,.read-less {color:#27b0b1;text-transform:uppercase;display:block;font-weight:bold;margin-top:5px;font-size:12px;font-family:ProximaNova-Regular;}
+body .read-less {display:none;}
+.actu-main article .left-col .rect-categorie {width:60px;height:60px;margin-top:26px;}
+.actu-main article .actu-more-content {padding-right:0px;padding-top:5px;display:none;padding-left:0px;}
+
+/* Couleur cat */
+.actu-cat1, .actu-cat2, .actu-cat3 {border:#dadada 1px solid; background-color:#f8fcfc;}
