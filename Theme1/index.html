@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="style.css" />
 <script src="jquery.js"></script>
 <script src="maindjs.js"></script>
+<script src="SinglePageNav.js"></script>
 <script>
 
 //init_menu_posY = $(window).height() - total_offset;
@@ -99,10 +100,7 @@ $(window).scroll(jqUpdateSize);
  			$(this).css({'transform':'scale(1)','opacity':1,'box-shadow': '0px 0px 0px #555' });
 	})	
 
-$(".stats2 li").click(function(){
-	$('#SelectEventList').toggle("slow");
-	
-});	
+
 	
 	
 	
@@ -114,8 +112,9 @@ $("#GrulesButton").click(function(){
 	$('#Genrules').toggle("slow");
 });
 
-$("#Erulesbutton").click(function(){
-	$('#Eventrules').toggle("slow");
+$(".stats2").click(function(){
+	var activetab = $(this).attr("rel");
+	$("#" + activetab).toggle("slow");
 });
 
 	
@@ -216,10 +215,9 @@ $(window).scroll(function () {
 <script>
 
 
+
+
 //Toggling Rules thing
-$('#EventRlists li').click(function() {
-    $('#SelectEventRules').css("display :block");
-});
 
 //END Togle Rules
 
@@ -250,18 +248,20 @@ $(function(){
 
 	<div id="menu-nav">
 
-	<nav id="content-nav-left" class="menu-left-menu-container"><ul id="menu-left-menu" class="item"><li id="menu-item-54" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-54"><a title="home" href="#landing-intro" >Home</a></li>
-<li id="menu-item-53" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53"><a title="Program" href="#S14about" >About</a></li>
+	<nav id="content-nav-left" class="menu-left-menu-container"><ul id="menu-left-menu" class="item"><li id="menu-item-54" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-54"><a title="home" href="#	" >Home</a></li>
+<li id="menu-item-53" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53"><a title="Program" href="#intro-about" >About</a></li>
 <li id="menu-item-52" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52"><a title="Conferences" href="#Results-Live" >Results</a></li>
-<li id="menu-item-51" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51"><a title="Events" href="#events" >Events</a></li>
+<li id="menu-item-51" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51"><a title="Events" href="#Events" >Events</a></li>
 </ul></nav>		
 
 	    <a href="http:/sargamcusat.in"><img id="logo-img" src="images/menu_logo_srgm.png" ></a>
 
-		<nav id="content-nav-right" class="menu-right-menu-container"><ul id="menu-right-menu" class="item"><li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="#Grules" >General Rules</a></li>
-<li id="menu-item-58" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58"><a title="Event Rules" href="Events" >Erules</a></li>
-<li id="menu-item-55" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55"><a title="Downloads" href="#Downloads" >Downloads</a></li>
+		<nav id="content-nav-right" class="menu-right-menu-container"><ul id="menu-right-menu" class="item"><li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="#Rules-listing" >General Rules</a></li>
+<li id="menu-item-58" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58"><a title="Event Rules" href="#Rules-listing" >Erules</a></li>
+<li id="menu-item-55" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55"><a title="Downloads" href="#footer-nav-user" >Downloads</a></li>
+<!--
 <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a title="Photo Gallery" href="#Gallery" >Gallery</a></li>
+-->
 </ul></nav>	</div><!-- fin menu-nav  -->
 <!--
     <div id="user-nav">
@@ -373,9 +373,9 @@ Version new of Cochin University Union Arts Festival is to be unveiled 12th of M
       <!-- Colorfull Boxes Starts -->  
       
       <ul class="stats2">       
-               <li class="blue-box defaut">
+               <li  rel="#LiteraryList" class="blue-box defaut">
 				
-                    	<a href="#Literary"><p class=" defaut chiffre-clef">Literary</p></a>
+                    	<a href="#Literary" id="l"><p class=" defaut chiffre-clef">Literary</p></a>
                     
 					
                     
@@ -383,13 +383,13 @@ Version new of Cochin University Union Arts Festival is to be unveiled 12th of M
 
 				<li class="pink-box">
 
-						<a href="#Finearts"><p class="chiffre-clef">Fine Arts</p></a>
+						<a href="#Finearts" id="f"><p class="chiffre-clef">Fine Arts</p></a>
 
 				</li>
 
 				<li class="purple-box" >
 
-						<a href="#Finearts"><p class="chiffre-clef">Music</p></a>
+						<a href="#Music" id="m"> <p class="chiffre-clef">Music</p></a>
 
 				</li>
 
@@ -415,9 +415,9 @@ Version new of Cochin University Union Arts Festival is to be unveiled 12th of M
 
 
 
-        <div id="SelectEventList" style="display : none;">
-        	<ul class="buillet-type1 multi-col item1">
-            	<lh>Literary</lh>
+        <div id="SelectEventList" >
+        	<ul class="buillet-type1 multi-col item1" id="DanceList" style="display :block;">
+            	<lh>Dance</lh>
                 
                 
                 
@@ -453,7 +453,93 @@ Version new of Cochin University Union Arts Festival is to be unveiled 12th of M
                
                
                 
-            </ul>
+            </ul><!-- END Dance List-->
+            
+            
+            
+            
+            
+            <ul  class="buillet-type1 multi-col item1" id="LitereryList" style="display :block;">
+            
+            <lh>Literary</lh>
+            
+            <li>Essay writing Malayalam</li>
+						<li> Essay writing English</li>
+						<li> Essay writing Hindi</li>
+						<li> Poetry writing Malayalam</li>
+						<li> Poetry writing English</li>
+						<li> Poetry writing Hindi</li>
+					
+				
+					
+						<li> Short story writing Malayalam</li>
+						<li> Short story writing English</li>
+						<li> Short story writing Hindi</li>
+						<li> Elocution Malayalam</li>
+						<li> Elocution English</li>
+						<li> Elocution Hindi</li>
+					
+				
+				
+						<li> Debate Malayalam</li>
+						<li> Debate English</li>
+						<li> Film review</li>
+						<li> Recitation Malayalam</li>
+						<li> Recitation English</li>
+						<li> Recitation Hindi</li>
+						<li> Quiz</li>
+            </ul><!-- END Literery List -->
+            
+            
+            
+             
+            <ul   class="buillet-type1 multi-col item1" id="LitereryList" style="display :block;">
+            
+            <lh>Music</lh>
+						<li>1 Light music Male</li>
+						<li>2 Light music Female</li>	
+						<li>3 Classical music</li>	
+						<li>4 Western solo</li>	
+						<li>5 Instrumental percussion eastern</li>	
+						<li>6 Instrumental non-percussion wind eastern</li>	
+						<li>7 Instrumental Non-percussion Wind western</li>	
+					
+				
+					
+						<li>8 Group music</li>	
+						<li>9 Western group song</li>	
+						<li>10 Instrumental non percussion string eastern</li>
+						<li>11 Instrumental non percussion String western</li>	
+						<li>12 Ganamela</li>	
+						<li>13 Mappilapaattu</li>	
+						<li>14 Percussion western</li>	
+						<li>15 Naadanpaattu</li>	
+					</ul>
+            
+            
+            
+            <ul    class="buillet-type1 multi-col item1" id="LitereryList" style="display :block;">
+            
+            <lh>Fine Arts</lh>
+						<li>1  Painting Oil color</li>
+						<li>2  Painting Water color</li>	
+						<li>3  Pencil drawing	</li>
+						<li>4  Poster design</li>	
+						<li>5  Caricature</li>		
+				
+				
+						<li>6  Collage</li>
+						<li>7  Clay modeling</li>	
+						<li>8  Cartooning</li>	
+						<li>9  Photography</li>	
+						<li>10 Rangoli</li>	
+					</ul>
+            
+            
+            
+            
+            
+            
         
         </div>
         
@@ -737,7 +823,24 @@ NOTE
 
 
 
+<script>
 
+            // Prevent console.log from generating errors in IE for the purposes of the demo
+            if ( ! window.console ) console = { log: function(){} };
+
+            // The actual plugin
+            $('#menu-nav').singlePageNav({
+                offset: $('#menu-nav').outerHeight(),
+                filter: ':not(.external)',
+                updateHash: true,
+                beforeStart: function() {
+                    console.log('begin scrolling');
+                },
+                onComplete: function() {
+                    console.log('done scrolling');
+                }
+            });
+        </script>
 
 
 
