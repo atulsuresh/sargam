@@ -41,7 +41,7 @@ body {background:url("images/main_bg.jpg") repeat;background-color:#FFFFFF;font-
 #CusatLogo {float:left;top:0; z-index:44; position:fixed;}
 #CusatLogo img { max-width: 100%;
 	height: auto; }
-#CusatUni {float:right;top:0; z-index:1; font-size:14px;}
+#CusatUni {float:right;top:0; z-index:1; font-size:14px; background-color:#F33; color:#FFF;}
 
 .block-content {margin-bottom:80px;margin-top:80px;transition: all 0.3s ease 0s;}
 H1 {text-align: center;font-weight: normal;}
@@ -136,7 +136,7 @@ strong.medium {font-family:ProximaNova-Semibold;}
 #l-right-content H1 .edition {color:#7f2b5f;font-size:33px;font-family:zag_boldregular;padding-right:10px;}
 #l-right-content H1 .edition  sup {padding:0px;margin:0px;text-transform:none;font-size:18px;}
 #l-right-content #infos {text-transform:uppercase;width:100%;text-align: center;padding:15px 0 0 0}
-#l-right-content #infos  #infos-texte {letter-spacing: 0px; font-size:13px;font-family:ProximaNova-Bold; }
+#l-right-content #infos  #infos-texte {letter-spacing: 6px; font-size:13px;font-family:ProximaNova-Bold; }
 
 /* Boutons navigations */
 #landing-nav {padding-top:28px; padding-left:150px;}
