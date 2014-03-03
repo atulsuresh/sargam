@@ -273,3 +273,16 @@ footer .footer-form .submit {vertical-align:top;background-color: transparent; b
 .af-box H3 {cursor:pointer; font-weight: normal;font-family:ProximaNova-Bold;text-align: left;width:185px;float:left;overflow:hidden;padding-left:15px;}
 .af-box H3:hover {opacity:0.7;}
 .top_fleche {background:url("../images/common/fleche_top1.png") no-repeat left center;padding-left:0px;padding-right:0px;margin:0px;padding-left:35px;margin-right:-52px;}
+
+#SelectEventList{
+	display:none;
+	-moz-column-count: 2;
+-moz-column-gap: 30px;
+-moz-column-rule: none;
+-webkit-column-count: 2;
+-webkit-column-gap: 30px;
+-webkit-column-rule: none;
+column-count: 2;
+column-gap: 30px;
+column-rule: none;
+}

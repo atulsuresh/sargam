@@ -5,6 +5,7 @@
 <title>Untitled Document</title>
 <link rel="stylesheet" href="style.css" />
 <script src="jquery.js"></script>
+<script src="script.js"></script>
 <script src="maindjs.js"></script>
 <script src="SinglePageNav.js"></script>
 <script>
@@ -197,6 +198,7 @@ $(window).scroll(jqUpdateSize);
 $("#GrulesButton").click(function(){
 	$('#Genrules').toggle("slow");
 });
+
 
 $(".stats2").click(function(){
 	var activetab = $(this).attr("rel");
@@ -765,52 +767,17 @@ Version new of Cochin University Union Arts Festival is to be unveiled 12th of M
      <div id="Events" class="block-content">
     <h1 class="main">Events</h1>
     	<div class="white-box1">
-        <!--
-    	 <ul id="EventRlists" class="hoz-listing">'
-         	<li><a href="#">Literary</a></li>
-            <li><a href="#">Music</a></li>
-            <li><a href="#">Dance</a></li>
-            <li><a href="#">Fine arts</a></li>
-            <li><a href="#">Theatre</a></li>
-                </ul>
-                
-               -->
-               
-      <!-- Colorfull Boxes Starts -->  
-      
-      <ul class="stats2">       
-               <li  rel="#LiteraryList" class="blue-box defaut">
-				
-                    	<a href="#Literary" id="l"><p class=" defaut chiffre-clef">Literary</p></a>
-                    
-					
-                    
-				</li>
+       
+      <ul class="stats2" id="Eventlist">       
+               <li class="blue-box defaut"><a  href="javascript:navigate_tabs('Literary', 'SelectEventList');" id="l"><p class=" defaut chiffre-clef">Literary</p></a></li>
 
-				<li class="pink-box">
+				<li class="pink-box"><a  href="javascript:navigate_tabs('Finearts', 'SelectEventList');"  id="f"><p class="chiffre-clef">Fine Arts</p></a></li>
 
-						<a href="#Finearts" id="f"><p class="chiffre-clef">Fine Arts</p></a>
+				<li class="purple-box" ><a  href="javascript:navigate_tabs('Music', 'SelectEventList');"  id="m"> <p class="chiffre-clef">Music</p></a></li>
 
-				</li>
+				<li class="orange-box"><a href="javascript:navigate_tabs('Dance', 'SelectEventList');" ><p class="chiffre-clef">Dance</p></a></li>
 
-				<li class="purple-box" >
-
-						<a href="#Music" id="m"> <p class="chiffre-clef">Music</p></a>
-
-				</li>
-
-				<li class="orange-box">
-
-					
-	<a href="#Finearts"><p class="chiffre-clef">Theatre</p></a>
-				</li>
-
-				<li class="green-box">
-
-					
-<a href="#Finearts">	<p class="chiffre-clef">Dance</p></a>
-
-				</li>
+				<li class="green-box"><a  href="javascript:navigate_tabs('Theatre', 'SelectEventList');" >	<p class="chiffre-clef">Theatre</p></a></li>
 
 			</ul><!-- 	ColorfULL Boxes End here -->
 
@@ -822,126 +789,9 @@ Version new of Cochin University Union Arts Festival is to be unveiled 12th of M
 
 
         <div id="SelectEventList" >
-        	<ul class="buillet-type1 multi-col item1" id="DanceList" style="display :block;">
-            	<lh>Dance</lh>
-                
-                
-                
-                
-                
-						<li>1   Solo dance Folk	</li>
-						<li>2   Classical dance Mohiniyattam	</li>
-						<li>3   Classical dance Bharatanatiyam	</li>
-						<ol>
-							<li> Male</li>
-							<li> Female</li>
-						</ol>
-						<li>4   Classical dance Kuchipudi	</li>
-						<ol>
-							<li> Male</li>
-							<li> Female</li>
-						</ol>
-                        
-						<li>5   Adapt tune	</li>
-						
-	
-						<li>6   Group dance	</li>
-						<li>7   Oppana-male	</li>
-						<li>8   Thiruvathira	</li>
-						<li>9   Step in synchro	</li>
-						<li>10   Oppana-female	</li>
-						<li>11   Video choreography	</li>
-						<li>12   Nostalgia	</li>
-						<li>13   Western Dance	</li>
-						<li>14   Ottamthullal</li>
-		
-                
-               
-               
-                
-            </ul><!-- END Dance List-->
+        
             
-            
-            
-            
-            
-            <ul  class="buillet-type1 multi-col item1" id="LitereryList" style="display :block;">
-            
-            <lh>Literary</lh>
-            
-            <li>Essay writing Malayalam</li>
-						<li> Essay writing English</li>
-						<li> Essay writing Hindi</li>
-						<li> Poetry writing Malayalam</li>
-						<li> Poetry writing English</li>
-						<li> Poetry writing Hindi</li>
-					
-				
-					
-						<li> Short story writing Malayalam</li>
-						<li> Short story writing English</li>
-						<li> Short story writing Hindi</li>
-						<li> Elocution Malayalam</li>
-						<li> Elocution English</li>
-						<li> Elocution Hindi</li>
-					
-				
-				
-						<li> Debate Malayalam</li>
-						<li> Debate English</li>
-						<li> Film review</li>
-						<li> Recitation Malayalam</li>
-						<li> Recitation English</li>
-						<li> Recitation Hindi</li>
-						<li> Quiz</li>
-            </ul><!-- END Literery List -->
-            
-            
-            
-             
-            <ul   class="buillet-type1 multi-col item1" id="LitereryList" style="display :block;">
-            
-            <lh>Music</lh>
-						<li>1 Light music Male</li>
-						<li>2 Light music Female</li>	
-						<li>3 Classical music</li>	
-						<li>4 Western solo</li>	
-						<li>5 Instrumental percussion eastern</li>	
-						<li>6 Instrumental non-percussion wind eastern</li>	
-						<li>7 Instrumental Non-percussion Wind western</li>	
-					
-				
-					
-						<li>8 Group music</li>	
-						<li>9 Western group song</li>	
-						<li>10 Instrumental non percussion string eastern</li>
-						<li>11 Instrumental non percussion String western</li>	
-						<li>12 Ganamela</li>	
-						<li>13 Mappilapaattu</li>	
-						<li>14 Percussion western</li>	
-						<li>15 Naadanpaattu</li>	
-					</ul>
-            
-            
-            
-            <ul    class="buillet-type1 multi-col item1" id="LitereryList" style="display :block;">
-            
-            <lh>Fine Arts</lh>
-						<li>1  Painting Oil color</li>
-						<li>2  Painting Water color</li>	
-						<li>3  Pencil drawing	</li>
-						<li>4  Poster design</li>	
-						<li>5  Caricature</li>		
-				
-				
-						<li>6  Collage</li>
-						<li>7  Clay modeling</li>	
-						<li>8  Cartooning</li>	
-						<li>9  Photography</li>	
-						<li>10 Rangoli</li>	
-					</ul>
-            
-            
+
             
             
             
