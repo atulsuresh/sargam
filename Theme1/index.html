@@ -21,7 +21,7 @@ $(window).load(function() {
 	var scroll_menu_anim = false;
 	
 	
-	
+	//hello
 	function jqUpdateSize(){
     // Get the dimensions of the viewport
     var width = $(window).width();
@@ -95,11 +95,97 @@ $(window).scroll(jqUpdateSize);
 
 	$(".stats2 li").hover(function(element){
   			//alert(element);
-  			$(this).css({'transform':'scale(1.4)','box-shadow': '1px 1px 12px #555','opacity':1});
+  			$(this).css({'transform':'scale(1)','box-shadow': '1px 1px 12px #555','opacity':1});
   		},function(){
  			$(this).css({'transform':'scale(1)','opacity':1,'box-shadow': '0px 0px 0px #555' });
 	})	
 
+
+
+
+
+
+
+	//Gestion actus
+	var openActu = function () {
+		 var init_position = $(window).scrollTop()+$(window).height();
+		 var target_position = $(window).scrollTop();
+		 public_target_actu_position = target_position;
+		  $('#livebar').css({"top":init_position+"px","display":"block","overflow":"auto","height":"100%"});
+		  /*$('html, body').animate({
+            	scrollTop: 0
+       	 	});*/
+
+			$('#livebar #actu-part1,#actu-main').css({"margin-top":200,"margin-bottom":200,})
+			$('#livebar #actu-part1,#actu-main').animate({"margin-top":0,"margin-bottom":0},1200);
+
+       	    $('#livebar').animate({
+            	"top": target_position
+       	 	},750);
+			$('#landing-convention,#landing-intro,#master-menu,#main-content').animate({
+            	"opacity": 0
+       	 	},1500);
+       	 	$("#livebar-footer").slideUp(250);
+
+       	 	$("html,body").css({"overflow":"hidden","height":"100%"});
+
+	};
+
+	var closeActu = function () {
+		 var target_position = $(window).scrollTop()+$(window).height();
+		/* $('html, body').animate({
+            	scrollTop: 0
+       	 	});*/
+       	  // $('#livebar').slideDown(1500);
+       	     $('#livebar').animate({
+            	"top": target_position
+       	 	},750,function() {
+    			$(this).css({"display":"none"});
+ 			 });
+			$('#landing-convention,#landing-intro,#master-menu,#main-content').animate({
+            	"opacity": 1
+       	 	},1500);
+
+			$("#livebar-footer").slideDown(250);
+
+			$("html,body").css({"overflow":"auto","height":"auto"});
+       	  //$('#livebar').slideUp(500);
+	};
+
+	$('#livebar').css({"display":"none"});
+	$("#open-actu,.af-box H3").click(openActu);
+	$("#close-actu").click(closeActu)
+
+	//read more escamotable
+	$("#actu-main .read-more").click(function(){
+		//alert("click detecté!");
+		var bt_less = $(this).parent().find(".read-less");
+		var actu_block = $(this).parent().parent();
+		var more_content = actu_block.find(".actu-more-content");
+		var article_texte = actu_block.find(".article-texte");
+		var defaut_content = "";
+		bt_less.css("display","block");
+		$(this).css("display","none");
+		actu_block.css({"overflow":"visible","height":"auto"});
+		more_content.css('opacity',0).slideDown({duration :800}).animate({opacity:1},{queue:false,duration:'slow'});
+		article_texte.slideUp({duration :800}).animate({opacity:0},{queue:false,duration:'slow'});
+
+	});
+
+	$("#actu-main .read-less").click(function(){
+		//alert("click detecté!");
+		var bt_more = $(this).parent().find(".read-more");
+		var actu_block = $(this).parent().parent();
+		var more_content = actu_block.find(".actu-more-content");
+		var article_texte = actu_block.find(".article-texte");
+		//actu_block.css({"overflow":"visible","height":"auto"});
+		bt_more.css("display","block");
+		$(this).css("display","none");
+		article_texte.slideDown({duration :800}).animate({opacity:1},{queue:false,duration:'slow'});
+		more_content.slideUp({duration:800});
+	});
+
+/*** End Live Bar Actions***/
 
 	
 	
@@ -235,6 +321,12 @@ $(function(){
 });
 
 
+
+
+
+
+
+
 </script>
 </head>
 
@@ -283,6 +375,320 @@ $(function(){
 	<!-- Enf Menu Tag----> 
     
     <div id="CusatLogo"><img src="images/CUSAT.png" /></div>
+    
+    
+    
+    <!-- Live Feeds --->
+    
+    
+   <section id="livebar">
+
+	<div id="actu-header">
+
+		<div class="content-box">
+
+			<a id="close-actu" class="exentred-bouton1">Close the newsfeed</a>
+
+			<H1 class="header">Live from meet innov</H1>
+
+		</div>
+
+	</div><!-- fin actu header -->
+
+
+
+	<div id="actu-part1">
+
+		<div class="content-box">
+
+			<a href=""><img src="http://www.thesite.com/en/wp-content/uploads/sites/2/2013/07/Penguins-300x225.jpg" width="300px" /></a>
+
+			<a href=""><img src="http://www.thesite.com/en/wp-content/uploads/sites/2/2013/07/mont_st_michel2-300x224.jpg" width="300px" /></a>
+
+			<a href=""><img src="http://www.thesite.com/en/wp-content/uploads/sites/2/2013/07/pont-du-gard-12-300x198.jpg" width="300px" /></a>
+
+		</div>
+
+	</div>
+
+	<div id="actu-twitter" class="twitter-feed">
+
+		<div id="actu-twitter-feed" class="content-box">
+
+			<div class="slides" id="slides">
+
+
+
+
+
+			</div><!-- fin slide -->
+
+			<a href="https://twitter.com/thesite" target="_blank" class="twitter-link">
+
+				<span><strong>FOLLOW @thesite2013</strong></span>
+
+				<span>#thesite2013</span>
+
+			</a>
+
+		</div>
+
+	</div><!-- fin twiiter -->
+
+
+
+	<div id="actu-main" class="actu-main">
+
+		<div class="content-box">
+
+			<article>
+
+				<div class="left-col">
+
+					<p class="date">
+
+						09.<strong>16</strong>					</p>
+
+					<div class="rect-categorie actu-cat3">
+
+					<img width="60" height="60" src="http://www.thesite.com/en/wp-content/uploads/sites/2/2013/08/VDM_13-Meetinov-LOGO-150x150.jpg" class="attachment-60x60 wp-post-image" alt="thesite_logo" />					</div>
+
+
+
+				</div>
+
+
+
+				<div class="right-col">
+
+					<H3 class="article">Meet Innov website nominated on awwwards.com</H3>
+
+					<p class="article-texte">
+
+					Since last Friday, Meet Innov website is nominated on awwwards.com. Internet users can assess the website depending on its design, creativity, usability and content. Vote for Meet Innov website on awwwards.com!	
+
+					</p>
+
+					<div class="actu-more-content">
+
+						Since last Friday, Meet Innov website is nominated on awwwards.com. Internet users can assess the website depending on its design, creativity, usability and content.
+
+
+
+<a title="Vote for Meet Innov website" href="http://www.awwwards.com/best-websites/meet-innov" target="_blank">Vote</a> for Meet Innov website on awwwards.com!					</div>
+
+					<a class="read-more">Read more</a>
+
+					<a class="read-less">Close</a>
+
+				</div>
+
+				<!-- right col -->
+
+			</article>
+
+
+
+   		
+
+			<article>
+
+				<div class="left-col">
+
+					<p class="date">
+
+						09.<strong>16</strong>					</p>
+
+					<div class="rect-categorie actu-cat3">
+
+					<img width="60" height="60" src="http://www.thesite.com/en/wp-content/uploads/sites/2/2013/08/VDM_13-Meetinov-LOGO-150x150.jpg" class="attachment-60x60 wp-post-image" alt="thesite_logo" />					</div>
+
+
+
+				</div>
+
+
+
+				<div class="right-col">
+
+					<H3 class="article">8 Major companies already participating</H3>
+
+					<p class="article-texte">
+
+					8 major companies have already registered for Meet Innov 2013: VEOLIA ENVIRONMENTAL SERVICES, DCF (SNCF), AÉROPORTS DE PARIS, SEPTODONT, DIAGNOSTICA STAGO, BOUYGUES TELECOM, AFNOR NORMALISATION and ALCATEL-LUCENT.	
+
+					</p>
+
+					<div class="actu-more-content">
+
+						8 major companies have already registered for Meet Innov 2013: VEOLIA ENVIRONMENTAL SERVICES, DCF (SNCF), AÉROPORTS DE PARIS, SEPTODONT, DIAGNOSTICA STAGO, BOUYGUES TELECOM, AFNOR NORMALISATION and ALCATEL-LUCENT.					</div>
+
+					<a class="read-more">Read more</a>
+
+					<a class="read-less">Close</a>
+
+				</div>
+
+				<!-- right col -->
+
+			</article>
+
+
+
+   		
+
+			<article>
+
+				<div class="left-col">
+
+					<p class="date">
+
+						09.<strong>16</strong>					</p>
+
+					<div class="rect-categorie actu-cat3">
+
+					<img width="60" height="60" src="http://www.thesite.com/en/wp-content/uploads/sites/2/2013/08/VDM_13-Meetinov-LOGO-150x150.jpg" class="attachment-60x60 wp-post-image" alt="thesite_logo" />					</div>
+
+
+
+				</div>
+
+
+
+				<div class="right-col">
+
+					<H3 class="article">Important dates for the partnering system</H3>
+
+					<p class="article-texte">
+
+					Meet Innov provides a partnering system to schedule your BtoB meetings. During September you will be asked to complete a profile which will provide to other participants information about your organization and expectation at Meet Innov. The BtoB meetings requests&hellip;	
+
+					</p>
+
+					<div class="actu-more-content">
+
+						Meet Innov provides a partnering system to schedule your BtoB meetings. During September you will be asked to complete a profile which will provide to other participants information about your organization and expectation at Meet Innov. The BtoB meetings requests will open on October 15 and close on November 7. It will be followed by a round of acceptance/refusal of the meetings requests. Partnering system will close on November 13 and meetings planning will be sent on November 18.					</div>
+
+					<a class="read-more">Read more</a>
+
+					<a class="read-less">Close</a>
+
+				</div>
+
+				<!-- right col -->
+
+			</article>
+
+
+
+   		
+
+			<article>
+
+				<div class="left-col">
+
+					<p class="date">
+
+						09.<strong>16</strong>					</p>
+
+					<div class="rect-categorie actu-cat3">
+
+					<img width="60" height="60" src="http://www.thesite.com/en/wp-content/uploads/sites/2/2013/08/VDM_13-Meetinov-LOGO-150x150.jpg" class="attachment-60x60 wp-post-image" alt="thesite_logo" />					</div>
+
+
+
+				</div>
+
+
+
+				<div class="right-col">
+
+					<H3 class="article">Meet Innov website is now online !</H3>
+
+					<p class="article-texte">
+
+					Meet Innov website provides information about the business convention format and its program. The "Program" page will give you a general overview of the planning for November 19, particularly the list and schedule for the first 15 workshops, the invited&hellip;	
+
+					</p>
+
+					<div class="actu-more-content">
+
+						Meet Innov website provides information about the business convention format and its program. The "Program" page will give you a general overview of the planning for November 19, particularly the list and schedule for the first 15 workshops, the invited events and the BtoB meetings time slot. In the coming weeks, new workshops and detailed information about the workshops, conferences and invited events will be added. Make sure you visit regularly Meet Innov website to stay up to date and don't forget to follow us on twitter @thesite.					</div>
+
+					<a class="read-more">Read more</a>
+
+					<a class="read-less">Close</a>
+
+				</div>
+
+				<!-- right col -->
+
+			</article>
+
+
+
+   		
+
+		</div>
+
+
+
+	</div>
+
+</section>
+
+    	
+    
+    <!-- End Live Feeds --->
+    
+    
+    
+    <!-- lIVE fEED Bar--->
+    
+    <section id="livebar-footer" style="text-align:center;">
+
+	<div class="content-box">
+<!--
+		<a id="open-actu" class="exentred-bouton1 top_fleche">News</a> 
+-->
+		
+
+		<div class="af-box">
+
+			<p class="date"><strong></strong>			<H3>Register Now</H3>
+
+		</div>
+
+   		
+
+		
+
+		<div class="af-box">
+
+			<p class="date"><strong></strong>			<H3>Results Soon</H3>
+
+		</div>
+
+   		
+
+		
+
+		<div class="af-box">
+
+			<p class="date"><strong></strong>			<H3>Events</H3>
+
+		</div>
+
+   		
+
+	</div> <!-- fin content box -->
+
+</section>
+
+    
+    <!-- END live Feed Bar --->
+    
+    
     
     
     <!--- Landing Intro Page -->
